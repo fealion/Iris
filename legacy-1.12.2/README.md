@@ -1,35 +1,39 @@
-# Iris — Forge 1.12.2 port (bootstrap)
+# Forge 1.12.2 shader-pipeline component
 
-This directory is an isolated legacy target for Minecraft 1.12.2 / Forge
-14.23.5.2860 / Java 8. It leaves the modern Fabric and NeoForge project intact.
+A direct port of modern Iris to Minecraft 1.12.2 is not present in this
+branch. Instead, this branch pins **AUSM (Actually Usable Shader Mod) 1.0.9
+Java 8**, a separate 1.12.2 shader pipeline which targets Forge
+14.23.5.2860 and aims to support shader-pack syntax compatible with Iris /
+OptiFine packs.
 
-## Current status
+This is an alternative shader implementation, **not an official Iris port**,
+and it does not promise full feature parity with modern Iris.
 
-This is **only the initial Forge mod bootstrap**. It registers a minimal mod
-entry point. It does not load shader packs, implement shader programs, or
-provide compatibility with Sodium yet.
+## Get the source and build
 
-## Build
-
-Use JDK 8 and Gradle 4.10.3:
+From the repository root:
 
 ```sh
-cd legacy-1.12.2
-gradle setupDecompWorkspace
-gradle build
+git submodule update --init --recursive
+cd legacy-1.12.2/shader-pipeline
+./gradlew --no-daemon assemble
 ```
 
-The output JAR is written to `build/libs/`.
+The build uses JDK 25 and produces a Java 8 distributable:
+`build/libs/AUSM-1.0.9-Java8.jar`. The Forge runtime target is Java 8.
+CI uploads this JAR as a workflow artifact.
 
-## Porting milestones
+## Important compatibility notes
 
-1. Establish a reproducible ForgeGradle 2.3 / Java 8 build.
-2. Implement a 1.12.2 shader-pack parser and pack lifecycle.
-3. Rebuild the OpenGL shader pipeline for the legacy fixed-function / LWJGL
-   environment and 1.12.2 render passes.
-4. Integrate with the Sodium legacy renderer through a small stable bridge,
-   while retaining vanilla-renderer fallback.
-5. Test shader packs and mod interactions against ATM3 6.1.1.
+AUSM's upstream documentation says it cannot be installed together with
+OptiFine. It lists compatibility paths for mods including Celeritas,
+Nothirium, LoliASM, Naughtirium, Lumenized, Efficient Entities, Entity
+Culling, Render Lib, and Better Portals, but support depends on the exact
+versions installed. Compatibility with the complete All the Mods 3 6.1.1
+pack—and especially simultaneous use with the Sodium-derived Relictium
+renderer—has not yet been tested.
 
-Do not install this bootstrap as a shaders mod: shader-pack support is not
-implemented.
+## Attribution and licensing
+
+See [UPSTREAMS.md](UPSTREAMS.md). The submodule retains the upstream LGPL-3.0
+license and the upstream author notices.
