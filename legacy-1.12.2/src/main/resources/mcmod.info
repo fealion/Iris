@@ -1,0 +1,15 @@
+[
+  {
+    "modid": "iris",
+    "name": "Iris (Forge 1.12.2)",
+    "description": "Legacy Forge 1.12.2 port bootstrap. Shader-pack support is not implemented yet.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "authorList": ["fealion", "Iris contributors"],
+    "credits": "Based on the Iris project; see the repository license.",
+    "url": "https://github.com/fealion/Iris",
+    "updateUrl": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
