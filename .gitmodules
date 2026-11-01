@@ -1,0 +1,3 @@
+[submodule "legacy-1.12.2/shader-pipeline"]
+    path = legacy-1.12.2/shader-pipeline
+    url = https://github.com/MtcLuna05/AUSM.git
