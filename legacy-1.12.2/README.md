@@ -1,5 +1,7 @@
 # Forge 1.12.2 shader-pipeline component
 
+This legacy branch intentionally disables the upstream modern Iris build and release workflows. Those workflows build the current modern Iris codebase and are not suitable for Minecraft 1.12.2. The branch-specific CI below only builds the pinned 1.12.2 Forge shader project.
+
 A direct port of modern Iris to Minecraft 1.12.2 is not present in this
 branch. Instead, this branch pins **AUSM (Actually Usable Shader Mod) 1.0.9
 Java 8**, a separate 1.12.2 shader pipeline which targets Forge
@@ -21,7 +23,7 @@ cd legacy-1.12.2/shader-pipeline
 
 The build uses JDK 25 and produces a Java 8 distributable:
 `build/libs/AUSM-1.0.9-Java8.jar`. The Forge runtime target is Java 8.
-CI uploads this JAR as a workflow artifact.
+CI uploads this JAR as the `ausm-1.0.9-forge-1.12.2-java8` workflow artifact. It does not upload the modern `iris-artifacts` build.
 
 ## Important compatibility notes
 
