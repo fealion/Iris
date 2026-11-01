@@ -32,6 +32,6 @@ jobs:
           ./gradlew --no-daemon assemble
       - uses: actions/upload-artifact@v4
         with:
-          name: iris-compatible-shader-pipeline-forge-1.12.2-java8
+          name: ausm-1.0.9-forge-1.12.2-java8
           path: legacy-1.12.2/shader-pipeline/build/libs/AUSM-*-Java8.jar
           if-no-files-found: error
