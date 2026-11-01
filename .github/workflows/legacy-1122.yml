@@ -1,4 +1,4 @@
-name: Forge 1.12.2 shader pipeline (Java 8)
+name: Forge 1.12.2 AUSM shader pipeline (Java 8)
 
 on:
   push:
