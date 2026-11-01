@@ -26,12 +26,17 @@ CI uploads this JAR as a workflow artifact.
 ## Important compatibility notes
 
 AUSM's upstream documentation says it cannot be installed together with
-OptiFine. It lists compatibility paths for mods including Celeritas,
-Nothirium, LoliASM, Naughtirium, Lumenized, Efficient Entities, Entity
-Culling, Render Lib, and Better Portals, but support depends on the exact
-versions installed. Compatibility with the complete All the Mods 3 6.1.1
-pack—and especially simultaneous use with the Sodium-derived Relictium
-renderer—has not yet been tested.
+OptiFine. The official ATM3 6.1.1 mod list does not list OptiFine, so that
+specific incompatibility is not an obvious pack-level blocker. This does not
+prove that AUSM works with the pack's other rendering or mixin-based mods.
+
+AUSM lists compatibility paths for mods including Celeritas, Nothirium,
+LoliASM, Naughtirium, Lumenized, Efficient Entities, Entity Culling, Render
+Lib, and Better Portals, but support depends on the exact versions installed.
+Compatibility with the complete All the Mods 3 6.1.1 pack—and especially
+simultaneous use with the Sodium-derived Relictium renderer—has not yet been
+tested. Treat the two artifacts as separate experiments until that combined
+runtime test succeeds.
 
 ## Attribution and licensing
 
